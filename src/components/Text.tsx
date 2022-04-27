@@ -1,15 +1,11 @@
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import { TextRoot } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const Text = () => {
+  const { description } = useContext(ResponseContext);
 
-const Text = (props: Props) => {
-  return <TextRoot>{props.description}</TextRoot>;
+  return <TextRoot>{description}</TextRoot>;
 };
 
 export default Text;

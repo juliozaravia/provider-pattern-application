@@ -1,19 +1,15 @@
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import ListItem from "./ListItem";
 import { ListLabel, ListRoot } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const List = () => {
+  const { data } = useContext(ResponseContext);
 
-const List = (props: Props) => {
   return (
     <ListRoot>
-      <ListLabel>Total: {props.data.length} items</ListLabel>
-      <ListItem {...props} />
+      <ListLabel>Total: {data.length} items</ListLabel>
+      <ListItem />
     </ListRoot>
   );
 };

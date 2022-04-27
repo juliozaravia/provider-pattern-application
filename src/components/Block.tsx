@@ -1,19 +1,15 @@
-import { BlockRoot, ImageLabel } from "./styles";
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import Text from "./Text";
+import { BlockRoot, ImageLabel } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const Block = () => {
+  const { image } = useContext(ResponseContext);
 
-const Block = (props: Props) => {
   return (
     <BlockRoot>
-      <Text {...props} />
-      <ImageLabel src={props.image} />
+      <Text />
+      <ImageLabel src={image} />
     </BlockRoot>
   );
 };

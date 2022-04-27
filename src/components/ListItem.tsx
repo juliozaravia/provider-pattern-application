@@ -1,17 +1,13 @@
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import { ListItemLink, ListItemRoot } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const ListItem = () => {
+  const { data } = useContext(ResponseContext);
 
-const ListItem = (props: Props) => {
   return (
     <>
-      {props.data.map((language) => (
+      {data.map((language) => (
         <ListItemRoot>
           <ListItemLink href={`https://www.google.com/search?q=${language.toLocaleLowerCase()}`} target="_blank">
             {language}

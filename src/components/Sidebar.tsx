@@ -1,19 +1,15 @@
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import List from "./List";
 import { SidebarLabel, SidebarRoot } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const Sidebar = () => {
+  const { title } = useContext(ResponseContext);
 
-const Sidebar = (props: Props) => {
   return (
     <SidebarRoot>
-      <SidebarLabel>{`${props.title} list:`}</SidebarLabel>
-      <List {...props} />
+      <SidebarLabel>{`${title} list:`}</SidebarLabel>
+      <List />
     </SidebarRoot>
   );
 };

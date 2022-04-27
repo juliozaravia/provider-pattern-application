@@ -1,15 +1,11 @@
+import { useContext } from "react";
+import { ResponseContext } from "../App";
 import { HeaderRoot } from "./styles";
 
-interface Props {
-  data: string[];
-  description: string;
-  image: string;
-  subtitle: string;
-  title: string;
-}
+const Header = () => {
+  const { subtitle } = useContext(ResponseContext);
 
-const Header = (props: Props) => {
-  return <HeaderRoot>{props.subtitle}</HeaderRoot>;
+  return <HeaderRoot>{subtitle}</HeaderRoot>;
 };
 
 export default Header;
